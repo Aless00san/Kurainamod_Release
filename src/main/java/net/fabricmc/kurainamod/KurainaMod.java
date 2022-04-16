@@ -9,6 +9,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import software.bernie.geckolib3.GeckoLib;
 
 public class KurainaMod implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
@@ -22,10 +23,11 @@ public class KurainaMod implements ModInitializer {
 	public void onInitialize() {
 		// This code runs as soon as Minecraft is in a mod-load-ready state.
 		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
-
+		//We initialize GeckoLib
+		GeckoLib.initialize();
+		//temp log to check if the mod loads
 		LOGGER.info("Kuraina says Hello world!");
-
+		//adding the items to the registry
 		Registry.register(Registry.ITEM, new Identifier("kurainamod", "raw_wing"), Raw_Wing);
 		Registry.register(Registry.ITEM, new Identifier("kurainamod", "cooked_wing"), Cooked_Wing);
 	}
