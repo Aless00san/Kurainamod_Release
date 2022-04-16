@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "kurainamod",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "Kuraina Mod",
+  "description": "This is a mod description!",
   "authors": [
-    "Me!"
+    "@mumaitron"
   ],
   "contact": {
     "homepage": "https://fabricmc.net/",
