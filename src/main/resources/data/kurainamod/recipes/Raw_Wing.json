@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "ingredient": {
+        "item": "kurainamod:raw_wing"
+    },
+    "result": "kurainamod:cooked_wing",
+    "experience": 0.5,
+    "cookingtime": 120
+}
