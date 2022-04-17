@@ -17,7 +17,7 @@ public class KurainaModel extends AnimatedTickingGeoModel<KurainaEntity> {
 
     @Override
     public Identifier getTextureLocation(KurainaEntity object) {
-        return new Identifier("kurainamod", "textures/entity/kuraina_texture.png");
+        return new Identifier("kurainamod", "textures/entity/kuraina.png");
     }
 
     @Override

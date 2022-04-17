@@ -1,7 +1,10 @@
 package net.fabricmc.kurainamod;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
+import net.fabricmc.kurainamod.client.renderer.entity.KurainaRenderer;
+import net.fabricmc.kurainamod.entity.KurainaEntity;
 import net.fabricmc.kurainamod.utils.MobAttributes;
 import net.fabricmc.kurainamod.utils.ModEntity;
 import net.minecraft.item.FoodComponent;
@@ -19,7 +22,7 @@ public class KurainaMod implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.
-	public static final Logger LOGGER = LogManager.getLogger("kuraianmod");
+	public static final Logger LOGGER = LogManager.getLogger("kurainamod");
 	//instance the items
 	public static final Item Raw_Wing = new Item(new FabricItemSettings().group(ItemGroup.FOOD).food(new FoodComponent.Builder().hunger(2).saturationModifier(1f).build()));
 	public static final Item Cooked_Wing = new Item(new FabricItemSettings().group(ItemGroup.FOOD).food(new FoodComponent.Builder().hunger(4).saturationModifier(3f).build()));
@@ -35,6 +38,10 @@ public class KurainaMod implements ModInitializer {
 		//adding the items to the registry
 		Registry.register(Registry.ITEM, new Identifier("kurainamod", "raw_wing"), Raw_Wing);
 		Registry.register(Registry.ITEM, new Identifier("kurainamod", "cooked_wing"), Cooked_Wing);
+		//adding renderer registry
+		EntityRendererRegistry.register(ModEntity.KURAINA, (context) -> {
+			return new KurainaRenderer(context);
+		});
 	}
 
 }
