@@ -1,11 +1,14 @@
-package net.fabricmc.kurainamod.client.models.mobs;
+package net.fabricmc.kurainamod.client.model;
 
-import net.fabricmc.kurainamod.KurainaMod;
 import net.fabricmc.kurainamod.entity.KurainaEntity;
 import net.minecraft.util.Identifier;
 import software.bernie.geckolib3.model.AnimatedTickingGeoModel;
 
-public class KurainaMobModel extends AnimatedTickingGeoModel<KurainaEntity> {
+public class KurainaModel extends AnimatedTickingGeoModel<KurainaEntity> {
+
+    public KurainaModel(){
+
+    }
 
     @Override
     public Identifier getModelLocation(KurainaEntity object) {
@@ -19,6 +22,6 @@ public class KurainaMobModel extends AnimatedTickingGeoModel<KurainaEntity> {
 
     @Override
     public Identifier getAnimationFileLocation(KurainaEntity animatable) {
-        return new Identifier("kurainamod", "animations/kuraina.animation.json");
+        return new Identifier("kurainamod", "animations/kuraina_animation.json");
     }
 }
