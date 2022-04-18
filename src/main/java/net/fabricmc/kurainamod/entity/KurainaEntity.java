@@ -15,6 +15,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.network.Packet;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.World;
+import org.checkerframework.checker.units.qual.A;
 import org.jetbrains.annotations.Nullable;
 import software.bernie.example.ClientListener;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -42,17 +43,17 @@ public class KurainaEntity extends TameableEntity implements IAnimatable, IAnima
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-        if (this.isAlive()) {
-            event.getController().setAnimation(new AnimationBuilder().addAnimation("Walk", true));
+        if (!this.isOnGround()){
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("Fly", true));
             return PlayState.CONTINUE;
         }
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("Fly", true));
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("Walk", true));
         return PlayState.CONTINUE;
     }
 
     @Override
     public void registerControllers(AnimationData animationData) {
-        AnimationController<KurainaEntity> controller = new AnimationController<>(this, "controller", 0, this::predicate);
+        animationData.addAnimationController(new AnimationController<KurainaEntity>(this, "controller", 0, this::predicate));
     }
 
     @Override

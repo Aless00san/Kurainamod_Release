@@ -6,10 +6,6 @@ import software.bernie.geckolib3.model.AnimatedTickingGeoModel;
 
 public class KurainaModel extends AnimatedTickingGeoModel<KurainaEntity> {
 
-    public KurainaModel(){
-
-    }
-
     @Override
     public Identifier getModelLocation(KurainaEntity object) {
         return new Identifier("kurainamod", "geo/kuraina.geo.json");
@@ -22,6 +18,6 @@ public class KurainaModel extends AnimatedTickingGeoModel<KurainaEntity> {
 
     @Override
     public Identifier getAnimationFileLocation(KurainaEntity animatable) {
-        return new Identifier("kurainamod", "animations/kuraiananew.json");
+        return new Identifier("kurainamod", "animations/kuraina.json");
     }
 }

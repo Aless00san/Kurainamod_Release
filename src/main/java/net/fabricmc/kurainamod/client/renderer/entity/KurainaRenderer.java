@@ -25,11 +25,4 @@ public class KurainaRenderer extends GeoEntityRenderer<KurainaEntity> {
                                      Identifier textureLocation) {
         return RenderLayer.getEntityTranslucent(getTextureLocation(animatable));
     }
-
-    @Override
-    protected float getDeathMaxRotation(KurainaEntity entityLivingBaseIn) {
-        return 0.0F;
-    }
-
-
 }
