@@ -22,6 +22,6 @@ public class KurainaModel extends AnimatedTickingGeoModel<KurainaEntity> {
 
     @Override
     public Identifier getAnimationFileLocation(KurainaEntity animatable) {
-        return new Identifier("kurainamod", "animations/kuraina.json");
+        return new Identifier("kurainamod", "animations/kuraiananew.json");
     }
 }

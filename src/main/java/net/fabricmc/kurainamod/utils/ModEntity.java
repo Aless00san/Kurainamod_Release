@@ -12,7 +12,7 @@ public class ModEntity {
     public static final EntityType<KurainaEntity> KURAINA = Registry.register(Registry.ENTITY_TYPE,
             new Identifier("kurainamod", "kuraina"),
             FabricEntityTypeBuilder.<KurainaEntity>create(SpawnGroup.CREATURE, KurainaEntity::new)
-                    .dimensions(EntityDimensions.fixed(1.5f, 2.6F)).fireImmune().trackRangeBlocks(90)
+                    .dimensions(EntityDimensions.fixed(0.5f, 0.75F)).trackRangeBlocks(90)
                     .trackedUpdateRate(4).build());
 
 }
