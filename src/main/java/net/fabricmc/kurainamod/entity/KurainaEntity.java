@@ -42,6 +42,10 @@ public class KurainaEntity extends TameableEntity implements IAnimatable, IAnima
     }
 
     private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
+        if (this.isAlive()) {
+            event.getController().setAnimation(new AnimationBuilder().addAnimation("Walk", true));
+            return PlayState.CONTINUE;
+        }
         event.getController().setAnimation(new AnimationBuilder().addAnimation("Fly", true));
         return PlayState.CONTINUE;
     }
